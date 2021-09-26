@@ -8,7 +8,6 @@
 # **Chapitre 2 : Programmation Orientée Objet**
 
 ## *Exercice 2.1*
----
 ```py
 class Plante :
     def __init__(self, espece, taille:float, age:int, age_maxi:int, nb_fleurs:int, nb_fruits:int) :
@@ -33,7 +32,6 @@ Rappelez-vous, toujours [**self.**](https://www.youtube.com/watch?v=M5d7vygUPoQ)
 
 
 ## *Exercice 2.2*
----
 ```py
 from math import pi
 
@@ -58,7 +56,6 @@ class Cerlce :
 
 
 ## *Exercice 2.3*
----
 1. ```py
    v = Voiture('Renault', 'Zoé', 0, 160)
    ```
@@ -76,7 +73,6 @@ class Cerlce :
 
 
 ## *Exercice 2.4*
----
 ```py
 class Personnage :
     """
@@ -119,19 +115,74 @@ class Personnage :
 
 
 ## *Exercice 2.5*
----
 ```py
+from random import shuffle
 
+class Doggo :
+    def __innit__(self, nom:str, pv:int, aboiement:str) :
+        self.nom = nom
+        self.pv  = pv
+        self.aboiement = aboiement
+    
+    def mordre(self, autre_chien) :
+        autre_chien.pv -= 1
+    
+    def manger(self) :
+        self.pv += 1  # yummy yummy in my belly
+    
+    def grogner(self) :
+        return 'Grrr...'+self.aboiement
+    
+    def machouiller(self, chaine:str) :
+        c = list(chaine)
+        shuffle(c)
+        return ''.join(c)
 ```
 
 <br><br>
 
 
 ## *Exercice 2.6*
----
-```py
-
-```
+1. Un *constructeur*
+2. une *méthode*
+3. Ses attributs sont *couleur* et *valeur*
+4. ```py
+    c = Carte('Carreau', 2)
+   ```
+5. ```py
+    paquet = []
+    for couleur in ["Trèfle", "Pique", "Cœur", "Carreau"] :
+        for valeur un range(1, 14) :
+            carte = Carte(couleur, valeur)
+            paquet.append(carte)
+   ```
+6. ```py
+    def affiche(self) :
+    têtes = {1 : "As", 11 : "Valet", 12 : "Dame", 13 : "Roi"}
+    if self.valeur not in têtes :
+        print(self.valeur, "de", self.couleur)
+    else :
+        print(têtes[self.valeur], "de", self.couleur)
+   ```
+7.  ```py
+    class Paquet :
+        def __init__(self) :
+            self.paquet = []
+            for couleur in ["Trèfle", "Pique", "Cœur", "Carreau"] :
+                for valeur un range(1, 14) :
+                    carte = Carte(couleur, valeur)
+                    self.paquet.append(carte)
+        
+        def affiche(self) :
+            for carte in self.paquet :
+                carte.affiche()
+    ```
+8.  ```py
+    from random import shuffle
+    
+    def melange(self) :
+        shuffle(self.paquet)
+    ```
 
 <br><br>
 
@@ -146,6 +197,7 @@ class Personnage :
 Editeur de textes :
 - VScode - Extension <u>Markdown All in One</u> de *Yu Zhang*
 - StackEdit [(web)](https://stackedit.io/app#)
+- Github (web) depuis le repo
 
 Cheatsheet : https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 

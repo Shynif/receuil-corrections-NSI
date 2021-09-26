@@ -139,12 +139,77 @@
 </code></pre>
 <p><br><br></p>
 <h2 id="exercice-2.5"><em>Exercice 2.5</em></h2>
-<pre class=" language-py"><code class="prism  language-py">
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">from</span> random <span class="token keyword">import</span> shuffle
+
+<span class="token keyword">class</span> <span class="token class-name">Doggo</span> <span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__innit__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nom<span class="token punctuation">:</span><span class="token builtin">str</span><span class="token punctuation">,</span> pv<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">,</span> aboiement<span class="token punctuation">:</span><span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>nom <span class="token operator">=</span> nom
+        self<span class="token punctuation">.</span>pv  <span class="token operator">=</span> pv
+        self<span class="token punctuation">.</span>aboiement <span class="token operator">=</span> aboiement
+    
+    <span class="token keyword">def</span> <span class="token function">mordre</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> autre_chien<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        autre_chien<span class="token punctuation">.</span>pv <span class="token operator">-=</span> <span class="token number">1</span>
+    
+    <span class="token keyword">def</span> <span class="token function">manger</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>pv <span class="token operator">+=</span> <span class="token number">1</span>  <span class="token comment"># yummy yummy in my belly</span>
+    
+    <span class="token keyword">def</span> <span class="token function">grogner</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">'Grrr...'</span><span class="token operator">+</span>self<span class="token punctuation">.</span>aboiement
+    
+    <span class="token keyword">def</span> <span class="token function">machouiller</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> chaine<span class="token punctuation">:</span><span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        c <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>chaine<span class="token punctuation">)</span>
+        shuffle<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token string">''</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
 </code></pre>
 <p><br><br></p>
 <h2 id="exercice-2.6"><em>Exercice 2.6</em></h2>
-<pre class=" language-py"><code class="prism  language-py">
+<ol>
+<li>Un <em>constructeur</em></li>
+<li>une <em>méthode</em></li>
+<li>Ses attributs sont <em>couleur</em> et <em>valeur</em></li>
+<li>
+<pre class=" language-py"><code class="prism  language-py"> c <span class="token operator">=</span> Carte<span class="token punctuation">(</span><span class="token string">'Carreau'</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
 </code></pre>
+</li>
+<li>
+<pre class=" language-py"><code class="prism  language-py"> paquet <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+ <span class="token keyword">for</span> couleur <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"Trèfle"</span><span class="token punctuation">,</span> <span class="token string">"Pique"</span><span class="token punctuation">,</span> <span class="token string">"Cœur"</span><span class="token punctuation">,</span> <span class="token string">"Carreau"</span><span class="token punctuation">]</span> <span class="token punctuation">:</span>
+     <span class="token keyword">for</span> valeur un <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+         carte <span class="token operator">=</span> Carte<span class="token punctuation">(</span>couleur<span class="token punctuation">,</span> valeur<span class="token punctuation">)</span>
+         paquet<span class="token punctuation">.</span>append<span class="token punctuation">(</span>carte<span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<pre class=" language-py"><code class="prism  language-py"> <span class="token keyword">def</span> <span class="token function">affiche</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+ têtes <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span> <span class="token punctuation">:</span> <span class="token string">"As"</span><span class="token punctuation">,</span> <span class="token number">11</span> <span class="token punctuation">:</span> <span class="token string">"Valet"</span><span class="token punctuation">,</span> <span class="token number">12</span> <span class="token punctuation">:</span> <span class="token string">"Dame"</span><span class="token punctuation">,</span> <span class="token number">13</span> <span class="token punctuation">:</span> <span class="token string">"Roi"</span><span class="token punctuation">}</span>
+ <span class="token keyword">if</span> self<span class="token punctuation">.</span>valeur <span class="token operator">not</span> <span class="token keyword">in</span> têtes <span class="token punctuation">:</span>
+     <span class="token keyword">print</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>valeur<span class="token punctuation">,</span> <span class="token string">"de"</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>couleur<span class="token punctuation">)</span>
+ <span class="token keyword">else</span> <span class="token punctuation">:</span>
+     <span class="token keyword">print</span><span class="token punctuation">(</span>têtes<span class="token punctuation">[</span>self<span class="token punctuation">.</span>valeur<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"de"</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>couleur<span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">class</span> <span class="token class-name">Paquet</span> <span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>paquet <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> couleur <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"Trèfle"</span><span class="token punctuation">,</span> <span class="token string">"Pique"</span><span class="token punctuation">,</span> <span class="token string">"Cœur"</span><span class="token punctuation">,</span> <span class="token string">"Carreau"</span><span class="token punctuation">]</span> <span class="token punctuation">:</span>
+            <span class="token keyword">for</span> valeur un <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+                carte <span class="token operator">=</span> Carte<span class="token punctuation">(</span>couleur<span class="token punctuation">,</span> valeur<span class="token punctuation">)</span>
+                self<span class="token punctuation">.</span>paquet<span class="token punctuation">.</span>append<span class="token punctuation">(</span>carte<span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">affiche</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token keyword">for</span> carte <span class="token keyword">in</span> self<span class="token punctuation">.</span>paquet <span class="token punctuation">:</span>
+            carte<span class="token punctuation">.</span>affiche<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">from</span> random <span class="token keyword">import</span> shuffle
+
+<span class="token keyword">def</span> <span class="token function">melange</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    shuffle<span class="token punctuation">(</span>self<span class="token punctuation">.</span>paquet<span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ol>
 <p><br><br></p>
 <p><br><br><br><br><br></p>
 <h1 id="aides-à-lécriture-de-ce-document-">Aides à l’écriture de ce document :</h1>
@@ -152,6 +217,7 @@
 <ul>
 <li>VScode - Extension <u>Markdown All in One</u> de <em>Yu Zhang</em></li>
 <li>StackEdit <a href="https://stackedit.io/app#">(web)</a></li>
+<li>Github (web) depuis le repo</li>
 </ul>
 <p>Cheatsheet : <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</a></p>
 <p>N’oubliez pas que le Markdown est une <strong>version simplifé d’écrire de l’HTML</strong>.<br><br>
