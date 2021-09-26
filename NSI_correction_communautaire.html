@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSI_correction_communautaire.MD</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li>
+<ul>
+<li></li>
+</ul>
+</li>
+<li><a href="#chapitre-2--programmation-orientée-objet">Chapitre 2 : Programmation Orientée Objet</a>
+<ul>
+<li><a href="#exercice-2.1">Exercice 2.1</a></li>
+<li><a href="#exercice-2.2">Exercice 2.2</a></li>
+<li><a href="#exercice-2.3">Exercice 2.3</a></li>
+<li><a href="#exercice-2.4">Exercice 2.4</a></li>
+<li><a href="#exercice-2.5">Exercice 2.5</a></li>
+<li><a href="#exercice-2.6">Exercice 2.6</a></li>
+</ul>
+</li>
+<li><a href="#aides-à-lécriture-de-ce-document-">Aides à l’écriture de ce document :</a></li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <p><br><br><br></p>
+<center><h1>Numérique et Sciences Informatiques</h1></center>
+<center><h2>Recueil de corrections communautaire</h2></center>
+<br><br><br><br><br><br><br>
+<h1 id="chapitre-2--programmation-orientée-objet"><strong>Chapitre 2 : Programmation Orientée Objet</strong></h1>
+<h2 id="exercice-2.1"><em>Exercice 2.1</em></h2>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">class</span> <span class="token class-name">Plante</span> <span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> espece<span class="token punctuation">,</span> taille<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">,</span> age_maxi<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">,</span> nb_fleurs<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">,</span> nb_fruits<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>espece <span class="token operator">=</span> espece
+        self<span class="token punctuation">.</span>taille <span class="token operator">=</span> taille
+        self<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>age<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>age_maxi  <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>age_maxi<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>nb_fleurs <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>nb_fleurs<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>nb_fruits <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>nb_fruits<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">grandir</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>augmentation<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>taille <span class="token operator">+=</span> augmentation
+    
+    <span class="token keyword">def</span> <span class="token function">faner</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>age<span class="token operator">&gt;</span>age_maxi<span class="token operator">*</span><span class="token number">0.9</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>nb_fleurs<span class="token operator">=</span><span class="token number">0</span>
+            self<span class="token punctuation">.</span>nb_fruits<span class="token operator">=</span><span class="token number">0</span>
+</code></pre>
+<p>Rappelez-vous, toujours <a href="https://www.youtube.com/watch?v=M5d7vygUPoQ"><strong>self.</strong></a> !</p>
+<p><br><br></p>
+<h2 id="exercice-2.2"><em>Exercice 2.2</em></h2>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">from</span> math <span class="token keyword">import</span> pi
+
+<span class="token keyword">class</span> <span class="token class-name">Cerlce</span> <span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> rayon<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>rayon <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>rayon<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">get_rayon</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>rayon
+    
+    <span class="token keyword">def</span> <span class="token function">set_rayon</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> new_rayon<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>rayon <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span>new_rayon<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">def</span> <span class="token function">get_perimetre</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>rayon<span class="token operator">*</span>pi<span class="token operator">*</span><span class="token number">2</span>
+    
+    <span class="token keyword">def</span> <span class="token function">get_aire</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>rayon<span class="token operator">*</span>self<span class="token punctuation">.</span>rayon<span class="token operator">*</span>pi
+</code></pre>
+<p><br><br></p>
+<h2 id="exercice-2.3"><em>Exercice 2.3</em></h2>
+<ol>
+<li>
+<pre class=" language-py"><code class="prism  language-py">v <span class="token operator">=</span> Voiture<span class="token punctuation">(</span><span class="token string">'Renault'</span><span class="token punctuation">,</span> <span class="token string">'Zoé'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">160</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<pre class=" language-py"><code class="prism  language-py">v<span class="token punctuation">.</span>affiche<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">print</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>get_km<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+<li>
+<pre class=" language-py"><code class="prism  language-py">v<span class="token punctuation">.</span>roule<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ol>
+<p><br><br></p>
+<h2 id="exercice-2.4"><em>Exercice 2.4</em></h2>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">class</span> <span class="token class-name">Personnage</span> <span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Classe implémentant un personnage caractérisé par :
+    - ses points de vie (hp)
+    - sa classe (classe)
+    - sa puissance d'attaque (atk)
+    - sa puissance de défense (dfs)
+    """</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> hp<span class="token punctuation">,</span> classe<span class="token punctuation">,</span> atk<span class="token punctuation">,</span> dfs<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Constructeur"""</span>
+        self<span class="token punctuation">.</span>hp     <span class="token operator">=</span> hp
+        self<span class="token punctuation">.</span>classe <span class="token operator">=</span> classe
+        self<span class="token punctuation">.</span>atk    <span class="token operator">=</span> atk
+        self<span class="token punctuation">.</span>dfs    <span class="token operator">=</span> dfs
+
+    <span class="token keyword">def</span> <span class="token function">get_hp</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""Accesseur des HP"""</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>hp
+
+    <span class="token keyword">def</span> <span class="token function">encaisse</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> points<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        <span class="token triple-quoted-string string">"""
+        Retire des points de HP au personnage
+        Si à l'issue du calcul les HP sont négatifs ou nuls
+        renvoie False, sinon renvoie True
+        """</span>
+        self<span class="token punctuation">.</span>hp <span class="token operator">-=</span> points
+        <span class="token comment"># Retourne le résultat de l'opération conditionnel, True ou False. Petite astuce sympa ;)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>hp <span class="token operator">&lt;=</span> <span class="token number">0</span>
+    
+    <span class="token keyword">def</span> <span class="token function">soigne</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> points<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Ajoute des points de HP au personnage
+    Ne renvoie rien
+    """</span>
+    self<span class="token punctuation">.</span>hp <span class="token operator">+=</span> points
+</code></pre>
+<p><br><br></p>
+<h2 id="exercice-2.5"><em>Exercice 2.5</em></h2>
+<pre class=" language-py"><code class="prism  language-py">
+</code></pre>
+<p><br><br></p>
+<h2 id="exercice-2.6"><em>Exercice 2.6</em></h2>
+<pre class=" language-py"><code class="prism  language-py">
+</code></pre>
+<p><br><br></p>
+<p><br><br><br><br><br></p>
+<h1 id="aides-à-lécriture-de-ce-document-">Aides à l’écriture de ce document :</h1>
+<p>Editeur de textes :</p>
+<ul>
+<li>VScode - Extension <u>Markdown All in One</u> de <em>Yu Zhang</em></li>
+<li>StackEdit <a href="https://stackedit.io/app#">(web)</a></li>
+</ul>
+<p>Cheatsheet : <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</a></p>
+<p>N’oubliez pas que le Markdown est une <strong>version simplifé d’écrire de l’HTML</strong>.<br><br>
+Vous pouvez écrire comme vous le souhaitez !</p>
+<p>Et le Markdown moderne est rempli de plug-ins. Pour interpréter du LateX par exemple ;)</p>
+
+    </div>
+  </div>
+</body>
+
+</html>
