@@ -28,6 +28,13 @@
 <li><a href="#exercice-2.6">Exercice 2.6</a></li>
 </ul>
 </li>
+<li><a href="#chapitre-3--types-abstraits-de-données">Chapitre 3 : Types abstraits de données</a>
+<ul>
+<li><a href="#listes-chaînées">Listes chaînées</a></li>
+<li><a href="#piles">Piles</a></li>
+<li><a href="#files">Files</a></li>
+</ul>
+</li>
 <li><a href="#aides-à-lécriture-de-ce-document-">Aides à l’écriture de ce document :</a></li>
 </ul>
 
@@ -39,7 +46,7 @@
 <center><h1>Numérique et Sciences Informatiques</h1></center>
 <center><h2>Recueil de corrections communautaire</h2></center>
 <br><br><br><br><br><br><br>
-<h1 id="chapitre-2--programmation-orientée-objet"><strong>Chapitre 2 :</strong> <a href="https://cdn.discordapp.com/attachments/868964577071734814/873899194467876874/joke-women-class.png"><strong>Programmation Orientée Objet</strong></a></h1>
+<h1 id="chapitre-2--programmation-orientée-objet"><strong>Chapitre 2 :</strong><a href="https://cdn.discordapp.com/attachments/868964577071734814/873899194467876874/joke-women-class.png"> <strong>Programmation Orientée Objet</strong></a></h1>
 <h2 id="exercice-2.1"><em>Exercice 2.1</em></h2>
 <pre class=" language-py"><code class="prism  language-py"><span class="token keyword">class</span> <span class="token class-name">Plante</span> <span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> espece<span class="token punctuation">,</span> taille<span class="token punctuation">:</span><span class="token builtin">float</span><span class="token punctuation">,</span> age<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">,</span> age_maxi<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">,</span> nb_fleurs<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">,</span> nb_fruits<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
@@ -142,7 +149,7 @@
 <pre class=" language-py"><code class="prism  language-py"><span class="token keyword">from</span> random <span class="token keyword">import</span> shuffle
 
 <span class="token keyword">class</span> <span class="token class-name">Doggo</span> <span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__innit__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nom<span class="token punctuation">:</span><span class="token builtin">str</span><span class="token punctuation">,</span> pv<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">,</span> aboiement<span class="token punctuation">:</span><span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nom<span class="token punctuation">:</span><span class="token builtin">str</span><span class="token punctuation">,</span> pv<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">,</span> aboiement<span class="token punctuation">:</span><span class="token builtin">str</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>nom <span class="token operator">=</span> nom
         self<span class="token punctuation">.</span>pv  <span class="token operator">=</span> pv
         self<span class="token punctuation">.</span>aboiement <span class="token operator">=</span> aboiement
@@ -172,11 +179,11 @@
 </code></pre>
 </li>
 <li>
-<pre class=" language-py"><code class="prism  language-py"> paquet <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<pre class=" language-py"><code class="prism  language-py"> paquet <span class="token operator">=</span> Paquet<span class="token punctuation">(</span><span class="token punctuation">)</span>
  <span class="token keyword">for</span> couleur <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"Trèfle"</span><span class="token punctuation">,</span> <span class="token string">"Pique"</span><span class="token punctuation">,</span> <span class="token string">"Cœur"</span><span class="token punctuation">,</span> <span class="token string">"Carreau"</span><span class="token punctuation">]</span> <span class="token punctuation">:</span>
      <span class="token keyword">for</span> valeur un <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
          carte <span class="token operator">=</span> Carte<span class="token punctuation">(</span>couleur<span class="token punctuation">,</span> valeur<span class="token punctuation">)</span>
-         paquet<span class="token punctuation">.</span>append<span class="token punctuation">(</span>carte<span class="token punctuation">)</span>
+         paquet<span class="token punctuation">.</span>ajouter_carte<span class="token punctuation">(</span>carte<span class="token punctuation">)</span>
 </code></pre>
 </li>
 <li>
@@ -193,7 +200,7 @@
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span> <span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>paquet <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
         <span class="token keyword">for</span> couleur <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">"Trèfle"</span><span class="token punctuation">,</span> <span class="token string">"Pique"</span><span class="token punctuation">,</span> <span class="token string">"Cœur"</span><span class="token punctuation">,</span> <span class="token string">"Carreau"</span><span class="token punctuation">]</span> <span class="token punctuation">:</span>
-            <span class="token keyword">for</span> valeur un <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+            <span class="token keyword">for</span> valeur <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
                 carte <span class="token operator">=</span> Carte<span class="token punctuation">(</span>couleur<span class="token punctuation">,</span> valeur<span class="token punctuation">)</span>
                 self<span class="token punctuation">.</span>paquet<span class="token punctuation">.</span>append<span class="token punctuation">(</span>carte<span class="token punctuation">)</span>
     
@@ -210,8 +217,127 @@
 </code></pre>
 </li>
 </ol>
+<p><br><br><br><br><br><br><br></p>
+<h1 id="chapitre-3--types-abstraits-de-données"><strong>Chapitre 3 : Types abstraits de données</strong></h1>
+<h2 id="listes-chaînées"><em><strong>Listes chaînées</strong></em></h2>
 <p><br><br></p>
-<p><br><br><br><br><br></p>
+<h3 id="exercice-3.1"><em>Exercice 3.1</em></h3>
+<hr>
+<p>Chaîne : <code>Début -&gt; 2 -&gt; 1 -&gt; 3 -&gt; 4 -&gt; None</code></p>
+<ol>
+<li>La valeur de la tête de <em>lst</em> est <strong>1</strong></li>
+<li>La longueur de <em>lst</em> est de <strong>4</strong></li>
+<li>(Voir chaîne si dessus)</li>
+</ol>
+<p><br><br></p>
+<h3 id="exercice-3.2"><em>Exercice 3.2</em></h3>
+<hr>
+<p>Chaîne :</p>
+<pre><code>--&gt; 2 -&gt; 1 -&gt; 3 -&gt; 4 -&gt; 2 --v
+|___________________________|
+</code></pre>
+<ul>
+<li>La chaîne est circulaire ⭕</li>
+</ul>
+<p><br><br></p>
+<h3 id="exercice-3.3"><em>Exercice 3.3</em></h3>
+<hr>
+<pre class=" language-py"><code class="prism  language-py">Fonction coupe<span class="token punctuation">(</span>lst<span class="token punctuation">,</span> n<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    lst2 est une liste chaînée dont la tête est <span class="token string">"la tête de lst"</span>
+
+    elt est la tête de <span class="token string">"lst"</span>
+
+    <span class="token comment"># Lecture des chaînons jusqu'à trouver celui de valeur n</span>
+    Tant que elt est non vide et que la valeur de elt est différente de <span class="token string">"n"</span> <span class="token punctuation">:</span>
+        elt est égal au successeur de <span class="token string">"elt"</span>
+    
+    Si elt est vide <span class="token punctuation">:</span>
+        Renvoyer <span class="token punctuation">(</span><span class="token string">"lst, lst2"</span><span class="token punctuation">)</span> <span class="token comment"># Pour expliquer rapidement, lst sera vide et lst2 contiendra tout</span>
+        <span class="token comment"># Sinon "lst2, None" est une possibilité</span>
+    Sinon <span class="token punctuation">:</span>
+        La tête de lst2 est égale au <span class="token string">"successeur de elt"</span>
+        Le successeur de elt est <span class="token string">"None"</span>
+        Renvoyer <span class="token punctuation">(</span>lst<span class="token punctuation">,</span> lst2<span class="token punctuation">)</span>
+</code></pre>
+<p><br><br></p>
+<h3 id="exercice-3.4"><em>Exercice 3.4</em></h3>
+<hr>
+<ol>
+<li><em>m</em> prend son successeur tout les 2 éléments parcourus puis à la fin son successeur si la liste est de longueur pair (on ne compte pas le premier élément). <em>m</em> devient donc <strong>3</strong> (au départ) puis <strong>2</strong> et pour finir <strong>7</strong>.</li>
+<li>Même logique, <em>m</em> devient <strong>3</strong>, <strong>2</strong> et pour finir <strong>7</strong>.</li>
+<li>Le rôle de ce code est de retourner le maillon au milieu de la chaîne.</li>
+</ol>
+<p><br><br></p>
+<h3 id="exercice-3.5"><em>Exercice 3.5</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.6"><em>Exercice 3.6</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.7"><em>Exercice 3.7</em></h3>
+<hr>
+<p><br><br><br><br><br><br></p>
+<hr>
+<h2 id="piles"><em><strong>Piles</strong></em></h2>
+<p><br><br></p>
+<h3 id="exercice-3.8"><em>Exercice 3.8</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.9"><em>Exercice 3.9</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.10"><em>Exercice 3.10</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.11"><em>Exercice 3.11</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.12"><em>Exercice 3.12</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.13"><em>Exercice 3.13</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.14"><em>Exercice 3.14</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.15"><em>Exercice 3.15</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.16"><em>Exercice 3.16</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.17"><em>Exercice 3.17</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.18"><em>Exercice 3.18</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.19"><em>Exercice 3.19</em></h3>
+<hr>
+<p><br><br><br><br><br><br></p>
+<hr>
+<h2 id="files"><em><strong>Files</strong></em></h2>
+<p><br><br></p>
+<h3 id="exercice-3.20"><em>Exercice 3.20</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.21"><em>Exercice 3.21</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.22"><em>Exercice 3.22</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.23"><em>Exercice 3.23</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.24"><em>Exercice 3.24</em></h3>
+<hr>
+<p><br><br></p>
+<h3 id="exercice-3.25"><em>Exercice 3.25</em></h3>
+<hr>
+<p><br><br></p>
+<p><br><br><br><br><br><br><br><br><br></p>
 <h1 id="aides-à-lécriture-de-ce-document-">Aides à l’écriture de ce document :</h1>
 <p>Editeur de textes :</p>
 <ul>

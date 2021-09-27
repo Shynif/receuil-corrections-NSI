@@ -120,7 +120,7 @@ class Personnage :
 from random import shuffle
 
 class Doggo :
-    def __innit__(self, nom:str, pv:int, aboiement:str) :
+    def __init__(self, nom:str, pv:int, aboiement:str) :
         self.nom = nom
         self.pv  = pv
         self.aboiement = aboiement
@@ -151,11 +151,11 @@ class Doggo :
     c = Carte('Carreau', 2)
    ```
 5. ```py
-    paquet = []
+    paquet = Paquet()
     for couleur in ["Trèfle", "Pique", "Cœur", "Carreau"] :
         for valeur un range(1, 14) :
             carte = Carte(couleur, valeur)
-            paquet.append(carte)
+            paquet.ajouter_carte(carte)
    ```
 6. ```py
     def affiche(self) :
@@ -170,7 +170,7 @@ class Doggo :
         def __init__(self) :
             self.paquet = []
             for couleur in ["Trèfle", "Pique", "Cœur", "Carreau"] :
-                for valeur un range(1, 14) :
+                for valeur in range(1, 14) :
                     carte = Carte(couleur, valeur)
                     self.paquet.append(carte)
         
@@ -185,6 +185,224 @@ class Doggo :
         shuffle(self.paquet)
     ```
 
+<br><br><br><br><br><br><br>
+
+
+
+
+# **Chapitre 3 : Types abstraits de données**
+<br>
+
+## ***Listes chaînées***
+<br><br>
+
+### *Exercice 3.1*
+---
+Chaîne : ``Début -> 2 -> 1 -> 3 -> 4 -> None``
+
+1. La valeur de la tête de *lst* est **1**
+2. La longueur de *lst* est de **4**
+3. (Voir chaîne si dessus)
+
+<br><br>
+
+
+### *Exercice 3.2*
+---
+Chaîne :
+```
+--> 2 -> 1 -> 3 -> 4 -> 2 --v
+|___________________________|
+```
+- La chaîne est circulaire ⭕
+
+<br><br>
+
+
+### *Exercice 3.3*
+---
+```py
+Fonction coupe(lst, n) :
+    lst2 est une liste chaînée dont la tête est "la tête de lst"
+
+    elt est la tête de "lst"
+
+    # Lecture des chaînons jusqu'à trouver celui de valeur n
+    Tant que elt est non vide et que la valeur de elt est différente de "n" :
+        elt est égal au successeur de "elt"
+    
+    Si elt est vide :
+        Renvoyer ("lst, lst2") # Pour expliquer rapidement, lst sera vide et lst2 contiendra tout
+        # Sinon "lst2, None" est une possibilité
+    Sinon :
+        La tête de lst2 est égale au "successeur de elt"
+        Le successeur de elt est "None"
+        Renvoyer (lst, lst2)
+```
+
+<br><br>
+
+
+### *Exercice 3.4*
+---
+1. *m* prend son successeur tout les 2 éléments parcourus puis à la fin son successeur si la liste est de longueur pair (on ne compte pas le premier élément). *m* devient donc **3** (au départ) puis **2** et pour finir **7**.
+2. Même logique, *m* devient **3**, **2** et pour finir **7**.
+3. Le rôle de ce code est de retourner le maillon au milieu de la chaîne.
+
+<br><br>
+
+
+### *Exercice 3.5*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.6*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.7*
+---
+
+
+<br><br><br><br><br><br>
+
+---
+## ***Piles***
+<br><br>
+
+### *Exercice 3.8*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.9*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.10*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.11*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.12*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.13*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.14*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.15*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.16*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.17*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.18*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.19*
+---
+
+
+<br><br><br><br><br><br>
+
+
+---
+## ***Files***
+<br><br>
+
+### *Exercice 3.20*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.21*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.22*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.23*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.24*
+---
+
+
+<br><br>
+
+
+### *Exercice 3.25*
+---
+
+
 <br><br>
 
 
@@ -192,7 +410,9 @@ class Doggo :
 
 
 
-<br><br><br><br><br>
+
+
+<br><br><br><br><br><br><br><br><br>
 # Aides à l'écriture de ce document :
 
 Editeur de textes :
