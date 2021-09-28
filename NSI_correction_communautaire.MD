@@ -193,7 +193,10 @@ class Doggo :
 # **Chapitre 3 : Types abstraits de données**
 <br>
 
-## ***Listes chaînées***
+---
+<center><h2><i><strong>Listes chaînées</strong></i></h2></center>
+---
+---
 <br><br>
 
 ### *Exercice 3.1*
@@ -273,12 +276,20 @@ Fonction coupe(lst, n) :
 <br><br><br><br><br><br>
 
 ---
-## ***Piles***
+<center><h2><i><strong>Piles</strong></i></h2></center>
+---
+---
 <br><br>
 
 ### *Exercice 3.8*
 ---
-
+1. Le contenu de la pile est, de haut en bas : ``8 -> 6 -> 5``
+2. La hauteur de la pile est de **3**
+3. ```py
+   while not pile.est_vide() :
+       pile.depiler()
+   ```
+4. La dernière valeur dépilée sera le **5**
 
 <br><br>
 
@@ -320,7 +331,20 @@ Fonction coupe(lst, n) :
 
 ### *Exercice 3.14*
 ---
-
+1.  ```js
+        Déjà parcouront la première partie, les valeurs au fur-et-à-mesure sont :
+        n : 23 -> 11 -> 5 -> 2 -> 1 -> 0
+        p : 1  +  1  +  1 +  0 +  1
+    
+    Affichage :
+        1
+        0
+        1
+        1
+        1
+    ```
+2. Cet algorithme permet de convertir un nombre décimal en binaire !<br>
+``01101001 01101110 01100011 01110010 01101111 01111001 01100001 01100010 01101100 01100101 00100001``
 
 <br><br>
 
@@ -361,7 +385,9 @@ Fonction coupe(lst, n) :
 
 
 ---
-## ***Files***
+<center><h2><i><strong>Files</strong></i></h2></center>
+---
+---
 <br><br>
 
 ### *Exercice 3.20*
