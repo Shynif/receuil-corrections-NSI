@@ -317,7 +317,20 @@ Fonction coupe(lst, n) :
 
 ### *Exercice 3.12*
 ---
+```
+p1 est une Pile
+tmp est une Pile vide
+p2 est une Pile vide
 
+Tant que p1 est non vide :
+	v est le résultat de Dépile(p1)
+	empiler v dans tmp
+
+Tant que tmp est non vide :
+	v est le résultat de Dépiler(tmp)
+	empiler v dans p1
+	empiler v dans p2
+```
 
 <br><br>
 
@@ -372,7 +385,24 @@ Fonction coupe(lst, n) :
 
 ### *Exercice 3.18*
 ---
+```
+Fonction insertion ( p : pile de nombres triées,	n : nombre ) -> Pile :
+	tmp est une Pile vide
+	v = Infini
 
+	Tant que v > n ET p est non-vide :
+		v est le résultat de dépiler p
+		Si v > n :
+			Empiler v dans tmp
+	Si v <= n :
+		Empiler v dans p
+	Empiler n dans p
+
+	Tant que tmp est non vide :
+		Empiler dans p le résultat de dépiler tmp
+
+	Renvoyer p
+```
 
 <br><br>
 
@@ -392,7 +422,13 @@ Fonction coupe(lst, n) :
 
 ### *Exercice 3.20*
 ---
-
+1. 6-7-8
+2. 3
+3.  ```
+    Tant que la file est non vide :
+        Défiler un élément
+    ```
+4. 8
 
 <br><br>
 
