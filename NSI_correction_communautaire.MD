@@ -255,24 +255,6 @@ Fonction coupe(lst, n) :
 <br><br>
 
 
-### *Exercice 3.5*
----
-
-
-<br><br>
-
-
-### *Exercice 3.6*
----
-
-
-<br><br>
-
-
-### *Exercice 3.7*
----
-
-
 <br><br><br><br><br><br>
 
 ---
@@ -290,27 +272,6 @@ Fonction coupe(lst, n) :
        pile.depiler()
    ```
 4. La dernière valeur dépilée sera le **5**
-
-<br><br>
-
-
-### *Exercice 3.9*
----
-
-
-<br><br>
-
-
-### *Exercice 3.10*
----
-
-
-<br><br>
-
-
-### *Exercice 3.11*
----
-
 
 <br><br>
 
@@ -335,13 +296,6 @@ Tant que tmp est non vide :
 <br><br>
 
 
-### *Exercice 3.13*
----
-
-
-<br><br>
-
-
 ### *Exercice 3.14*
 ---
 1.  ```js
@@ -358,27 +312,6 @@ Tant que tmp est non vide :
     ```
 2. Cet algorithme permet de convertir un nombre décimal en binaire !<br>
 ``01101001 01101110 01100011 01110010 01101111 01111001 01100001 01100010 01101100 01100101 00100001``
-
-<br><br>
-
-
-### *Exercice 3.15*
----
-
-
-<br><br>
-
-
-### *Exercice 3.16*
----
-
-
-<br><br>
-
-
-### *Exercice 3.17*
----
-
 
 <br><br>
 
@@ -407,10 +340,6 @@ Fonction insertion ( p : pile de nombres triées,	n : nombre ) -> Pile :
 <br><br>
 
 
-### *Exercice 3.19*
----
-
-
 <br><br><br><br><br><br>
 
 
@@ -433,44 +362,152 @@ Fonction insertion ( p : pile de nombres triées,	n : nombre ) -> Pile :
 <br><br>
 
 
-### *Exercice 3.21*
----
+<br><br><br><br><br><br><br>
 
 
-<br><br>
 
 
-### *Exercice 3.22*
----
+# **Chapitre 4 : Récursivité**
+<br>
 
 
-<br><br>
-
-
-### *Exercice 3.23*
----
-
+## *Exercice 4.1*
+```py
+def factoriel(n:int)->int :
+    return n*factoriel(n-1)
+```
 
 <br><br>
 
 
-### *Exercice 3.24*
----
-
-
-<br><br>
-
-
-### *Exercice 3.25*
----
-
+## *Exercice 4.2*
+1. 42 -> 85 -> 426 -> 853 -> 1707
+   <br>Il y a au total 5 appels
+2. 43 -> 87 -> 175 -> 876 -> 1753
+   <br>Il y a au total 5 appels
 
 <br><br>
 
 
+## *Exercice 4.6*
+1. **m=1** et **n=2**,<br>**m>0 et n>0**<br>donc on a *A(m-1, A(m,n-1))*<br>
+    soit **A(0, A(1, 1))**<br>
+    On répète l'opération ... et obtient **6 appels récursifs**
+    <br><br>
+2. A(2,1) -> **14 appels**
+3. ```py
+    # Voir aussi : https://pythontutor.com/visualize.html#mode=display
+    def A(m, n, s="%s"):
+        global na
+        print(s % ("A(%d,%d)" % (m, n)))
+        if m == 0:
+            return n + 1
+        if n == 0:
+            na+=1
+            return A(m - 1, 1, s)
+        n2 = A(m, n - 1, s % ("A(%d,%%s)" % (m - 1)))
+        na+=2
+        return A(m - 1, n2, s)
+
+    na=1
+    print(f"Résultat : {A(3,4)} avec {na} appels")
+    ```
+    Résultat : 125 avec 10307 appels
+4.  ```py
+    '''def A(m,n):
+    if m>0 :
+        if n>0:
+            return A(m-1, A(m,n-1))
+        return A(m-1,1)
+    return n+1'''
+    A=lambda m,n:n+(m==0 or A(m-1,n==0 or A(m,n-1))-n)
+    print(A(3,4))
+    ```
+
+<br><br>
+
+
+## *Exercice 4.19*
+```py
+def partition(T, premier, dernier) :
+	j=premier
+	for i in range(premier, dernier):
+		if T[i] <= T[dernier] :
+			T[i], T[j] = T[j], T[i]
+			j+=1
+	T[dernier], T[j] = T[j], T[dernier]
+	return j
+
+def tri_rapide(T, premier, dernier) :
+	if premier<dernier:
+		pivot = partition(T, premier, dernier)
+		tri_rapide(T, premier, pivot-1)
+		tri_rapide(T, pivot+1, dernier)
+
+l=[0,5,6,8,4,2,3,1,7,9]
+tri_rapide(l, 0, len(l)-1)
+print(l)
+```
+
+<br><br><br><br><br><br><br>
 
 
 
+
+# **Chapitre 5 :**[ **Diviser pour régner**](https://media.discordapp.net/attachments/868964577071734814/897203031836352542/x1a1thbc8us71.png?width=484&height=514)
+<br>
+
+## *Exercice 5.3*
+1.  ```py
+    def dicho_iter(lst, valeur,gauche=0,droite=len(lst)-1,milieu=0) :
+        """
+        Recherche valeur dans lst (version itérative)
+        Renvoie l'indice de valeur dans lst s'il existe, -1 sinon
+        """
+        if gauche<=droite:
+            milieu=(gauche+droite)>>1
+            if lst[milieu]==valeur :
+                return milieu
+            elif lst[milieu]>x:
+                return dicho_iter(lst,valeur,gauche,milieu-1,milieu)
+            else :
+                return dicho_iter(lst,valeur,milieu+1,droite,milieu)
+        return -1
+    ```
+2. **9** car 500 < 2<sup>9</sup>
+
+<br><br>
+
+
+## *Exercice 5.6*
+   1. a) <br>43x58<br>=344+2150<br>=2494
+      b) **4**
+      c) **O(n)**
+   2. **"3"** mais plutôt **11**
+   3. **5**
+   4. 3 et 4. On obtient le nombre de puissance de 10 nécessaire à écrire le nombre
+   5. a) **25** et **68**
+    b)
+   ```py
+    def coupe_10n(n, b):
+        return (n//10**b, n%10**b)
+   ```
+    6.
+```py
+    def karatsuba(m,n) :
+        t=max(m,n)
+        if t<2 :
+            return m*n
+        a,b=coupe_10n(m,2)
+        c,d=coupe_10n(n,2)
+        ac=karatsuba(a,c)
+        bd=karatsuba(b,d)
+        ab_cd=karatsuba(ac,bd)
+        return ac*10**t+(ac+bd-ab_cd)*10**(t/2)+bd
+```
+
+
+<br><br>
 
 
 

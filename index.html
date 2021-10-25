@@ -38,6 +38,20 @@
 <li></li>
 </ul>
 </li>
+<li><a href="#chapitre-4--récursivité">Chapitre 4 : Récursivité</a>
+<ul>
+<li><a href="#exercice-4.1">Exercice 4.1</a></li>
+<li><a href="#exercice-4.2">Exercice 4.2</a></li>
+<li><a href="#exercice-4.6">Exercice 4.6</a></li>
+<li><a href="#exercice-4.19">Exercice 4.19</a></li>
+</ul>
+</li>
+<li><a href="#chapitre-5--diviser-pour-régner">Chapitre 5 : Diviser pour régner</a>
+<ul>
+<li><a href="#exercice-5.3">Exercice 5.3</a></li>
+<li><a href="#exercice-5.6">Exercice 5.6</a></li>
+</ul>
+</li>
 <li><a href="#aides-à-lécriture-de-ce-document-">Aides à l’écriture de ce document :</a></li>
 </ul>
 
@@ -274,14 +288,6 @@
 <li>Le rôle de ce code est de retourner le maillon au milieu de la chaîne.</li>
 </ol>
 <p><br><br></p>
-<h3 id="exercice-3.5"><em>Exercice 3.5</em></h3>
-<hr>
-<p><br><br></p>
-<h3 id="exercice-3.6"><em>Exercice 3.6</em></h3>
-<hr>
-<p><br><br></p>
-<h3 id="exercice-3.7"><em>Exercice 3.7</em></h3>
-<hr>
 <p><br><br><br><br><br><br></p>
 <hr>
 <h2 id="centerh2istrongpilesstrongih2center"><center><h2><i><strong>Piles</strong></i></h2></center></h2>
@@ -300,15 +306,6 @@
 <li>La dernière valeur dépilée sera le <strong>5</strong></li>
 </ol>
 <p><br><br></p>
-<h3 id="exercice-3.9"><em>Exercice 3.9</em></h3>
-<hr>
-<p><br><br></p>
-<h3 id="exercice-3.10"><em>Exercice 3.10</em></h3>
-<hr>
-<p><br><br></p>
-<h3 id="exercice-3.11"><em>Exercice 3.11</em></h3>
-<hr>
-<p><br><br></p>
 <h3 id="exercice-3.12"><em>Exercice 3.12</em></h3>
 <hr>
 <pre><code>p1 est une Pile
@@ -324,9 +321,6 @@ Tant que tmp est non vide :
 	empiler v dans p1
 	empiler v dans p2
 </code></pre>
-<p><br><br></p>
-<h3 id="exercice-3.13"><em>Exercice 3.13</em></h3>
-<hr>
 <p><br><br></p>
 <h3 id="exercice-3.14"><em>Exercice 3.14</em></h3>
 <hr>
@@ -348,15 +342,6 @@ Affichage <span class="token punctuation">:</span>
 <code>01101001 01101110 01100011 01110010 01101111 01111001 01100001 01100010 01101100 01100101 00100001</code></li>
 </ol>
 <p><br><br></p>
-<h3 id="exercice-3.15"><em>Exercice 3.15</em></h3>
-<hr>
-<p><br><br></p>
-<h3 id="exercice-3.16"><em>Exercice 3.16</em></h3>
-<hr>
-<p><br><br></p>
-<h3 id="exercice-3.17"><em>Exercice 3.17</em></h3>
-<hr>
-<p><br><br></p>
 <h3 id="exercice-3.18"><em>Exercice 3.18</em></h3>
 <hr>
 <pre><code>Fonction insertion ( p : pile de nombres triées,	n : nombre ) -&gt; Pile :
@@ -377,8 +362,6 @@ Affichage <span class="token punctuation">:</span>
 	Renvoyer p
 </code></pre>
 <p><br><br></p>
-<h3 id="exercice-3.19"><em>Exercice 3.19</em></h3>
-<hr>
 <p><br><br><br><br><br><br></p>
 <hr>
 <h2 id="centerh2istrongfilesstrongih2center"><center><h2><i><strong>Files</strong></i></h2></center></h2>
@@ -397,20 +380,132 @@ Affichage <span class="token punctuation">:</span>
 <li>8</li>
 </ol>
 <p><br><br></p>
-<h3 id="exercice-3.21"><em>Exercice 3.21</em></h3>
-<hr>
+<p><br><br><br><br><br><br><br></p>
+<h1 id="chapitre-4--récursivité"><strong>Chapitre 4 : Récursivité</strong></h1>
+<br>
+<h2 id="exercice-4.1"><em>Exercice 4.1</em></h2>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">def</span> <span class="token function">factoriel</span><span class="token punctuation">(</span>n<span class="token punctuation">:</span><span class="token builtin">int</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token builtin">int</span> <span class="token punctuation">:</span>
+    <span class="token keyword">return</span> n<span class="token operator">*</span>factoriel<span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span>
+</code></pre>
 <p><br><br></p>
-<h3 id="exercice-3.22"><em>Exercice 3.22</em></h3>
-<hr>
+<h2 id="exercice-4.2"><em>Exercice 4.2</em></h2>
+<ol>
+<li>42 -&gt; 85 -&gt; 426 -&gt; 853 -&gt; 1707<br>
+<br>Il y a au total 5 appels</li>
+<li>43 -&gt; 87 -&gt; 175 -&gt; 876 -&gt; 1753<br>
+<br>Il y a au total 5 appels</li>
+</ol>
 <p><br><br></p>
-<h3 id="exercice-3.23"><em>Exercice 3.23</em></h3>
-<hr>
+<h2 id="exercice-4.6"><em>Exercice 4.6</em></h2>
+<ol>
+<li><strong>m=1</strong> et <strong>n=2</strong>,<br><strong>m&gt;0 et n&gt;0</strong><br>donc on a <em>A(m-1, A(m,n-1))</em><br><br>
+soit <strong>A(0, A(1, 1))</strong><br><br>
+On répète l’opération … et obtient <strong>6 appels récursifs</strong><br>
+<br><br></li>
+<li>A(2,1) -&gt; <strong>14 appels</strong></li>
+<li>
+<pre class=" language-py"><code class="prism  language-py"> <span class="token comment"># Voir aussi : https://pythontutor.com/visualize.html#mode=display</span>
+ <span class="token keyword">def</span> <span class="token function">A</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span> n<span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token string">"%s"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">global</span> na
+     <span class="token keyword">print</span><span class="token punctuation">(</span>s <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token string">"A(%d,%d)"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+     <span class="token keyword">if</span> m <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+         <span class="token keyword">return</span> n <span class="token operator">+</span> <span class="token number">1</span>
+     <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+         na<span class="token operator">+=</span><span class="token number">1</span>
+         <span class="token keyword">return</span> A<span class="token punctuation">(</span>m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+     n2 <span class="token operator">=</span> A<span class="token punctuation">(</span>m<span class="token punctuation">,</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> s <span class="token operator">%</span> <span class="token punctuation">(</span><span class="token string">"A(%d,%%s)"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+     na<span class="token operator">+=</span><span class="token number">2</span>
+     <span class="token keyword">return</span> A<span class="token punctuation">(</span>m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> n2<span class="token punctuation">,</span> s<span class="token punctuation">)</span>
+
+ na<span class="token operator">=</span><span class="token number">1</span>
+ <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">"Résultat : {A(3,4)} avec {na} appels"</span><span class="token punctuation">)</span>
+</code></pre>
+Résultat : 125 avec 10307 appels</li>
+<li>
+<pre class=" language-py"><code class="prism  language-py"><span class="token triple-quoted-string string">'''def A(m,n):
+if m&gt;0 :
+    if n&gt;0:
+        return A(m-1, A(m,n-1))
+    return A(m-1,1)
+return n+1'''</span>
+A<span class="token operator">=</span><span class="token keyword">lambda</span> m<span class="token punctuation">,</span>n<span class="token punctuation">:</span>n<span class="token operator">+</span><span class="token punctuation">(</span>m<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">or</span> A<span class="token punctuation">(</span>m<span class="token number">-1</span><span class="token punctuation">,</span>n<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">or</span> A<span class="token punctuation">(</span>m<span class="token punctuation">,</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">-</span>n<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>A<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ol>
 <p><br><br></p>
-<h3 id="exercice-3.24"><em>Exercice 3.24</em></h3>
-<hr>
+<h2 id="exercice-4.19"><em>Exercice 4.19</em></h2>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">def</span> <span class="token function">partition</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> premier<span class="token punctuation">,</span> dernier<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+	j<span class="token operator">=</span>premier
+	<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>premier<span class="token punctuation">,</span> dernier<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		<span class="token keyword">if</span> T<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> T<span class="token punctuation">[</span>dernier<span class="token punctuation">]</span> <span class="token punctuation">:</span>
+			T<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> T<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> T<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> T<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+			j<span class="token operator">+=</span><span class="token number">1</span>
+	T<span class="token punctuation">[</span>dernier<span class="token punctuation">]</span><span class="token punctuation">,</span> T<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> T<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> T<span class="token punctuation">[</span>dernier<span class="token punctuation">]</span>
+	<span class="token keyword">return</span> j
+
+<span class="token keyword">def</span> <span class="token function">tri_rapide</span><span class="token punctuation">(</span>T<span class="token punctuation">,</span> premier<span class="token punctuation">,</span> dernier<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+	<span class="token keyword">if</span> premier<span class="token operator">&lt;</span>dernier<span class="token punctuation">:</span>
+		pivot <span class="token operator">=</span> partition<span class="token punctuation">(</span>T<span class="token punctuation">,</span> premier<span class="token punctuation">,</span> dernier<span class="token punctuation">)</span>
+		tri_rapide<span class="token punctuation">(</span>T<span class="token punctuation">,</span> premier<span class="token punctuation">,</span> pivot<span class="token number">-1</span><span class="token punctuation">)</span>
+		tri_rapide<span class="token punctuation">(</span>T<span class="token punctuation">,</span> pivot<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> dernier<span class="token punctuation">)</span>
+
+l<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span>
+tri_rapide<span class="token punctuation">(</span>l<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l<span class="token punctuation">)</span>
+</code></pre>
+<p><br><br><br><br><br><br><br></p>
+<h1 id="chapitre-5--diviser-pour-régner"><strong>Chapitre 5 :</strong><a href="https://media.discordapp.net/attachments/868964577071734814/897203031836352542/x1a1thbc8us71.png?width=484&amp;height=514"> <strong>Diviser pour régner</strong></a></h1>
+<br>
+<h2 id="exercice-5.3"><em>Exercice 5.3</em></h2>
+<ol>
+<li>
+<pre class=" language-py"><code class="prism  language-py"><span class="token keyword">def</span> <span class="token function">dicho_iter</span><span class="token punctuation">(</span>lst<span class="token punctuation">,</span> valeur<span class="token punctuation">,</span>gauche<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>droite<span class="token operator">=</span><span class="token builtin">len</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>milieu<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    Recherche valeur dans lst (version itérative)
+    Renvoie l'indice de valeur dans lst s'il existe, -1 sinon
+    """</span>
+    <span class="token keyword">if</span> gauche<span class="token operator">&lt;=</span>droite<span class="token punctuation">:</span>
+        milieu<span class="token operator">=</span><span class="token punctuation">(</span>gauche<span class="token operator">+</span>droite<span class="token punctuation">)</span><span class="token operator">&gt;&gt;</span><span class="token number">1</span>
+        <span class="token keyword">if</span> lst<span class="token punctuation">[</span>milieu<span class="token punctuation">]</span><span class="token operator">==</span>valeur <span class="token punctuation">:</span>
+            <span class="token keyword">return</span> milieu
+        <span class="token keyword">elif</span> lst<span class="token punctuation">[</span>milieu<span class="token punctuation">]</span><span class="token operator">&gt;</span>x<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> dicho_iter<span class="token punctuation">(</span>lst<span class="token punctuation">,</span>valeur<span class="token punctuation">,</span>gauche<span class="token punctuation">,</span>milieu<span class="token number">-1</span><span class="token punctuation">,</span>milieu<span class="token punctuation">)</span>
+        <span class="token keyword">else</span> <span class="token punctuation">:</span>
+            <span class="token keyword">return</span> dicho_iter<span class="token punctuation">(</span>lst<span class="token punctuation">,</span>valeur<span class="token punctuation">,</span>milieu<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>droite<span class="token punctuation">,</span>milieu<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
+</code></pre>
+</li>
+<li><strong>9</strong> car 500 &lt; 2<sup>9</sup></li>
+</ol>
 <p><br><br></p>
-<h3 id="exercice-3.25"><em>Exercice 3.25</em></h3>
-<hr>
+<h2 id="exercice-5.6"><em>Exercice 5.6</em></h2>
+<ol>
+<li>a) <br>43x58<br>=344+2150<br>=2494<br>
+b) <strong>4</strong><br>
+c) <strong>O(n)</strong></li>
+<li><strong>"3"</strong> mais plutôt <strong>11</strong></li>
+<li><strong>5</strong></li>
+<li>3 et 4. On obtient le nombre de puissance de 10 nécessaire à écrire le nombre</li>
+<li>a) <strong>25</strong> et <strong>68</strong><br>
+b)</li>
+</ol>
+<pre class=" language-py"><code class="prism  language-py"> <span class="token keyword">def</span> <span class="token function">coupe_10n</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+     <span class="token keyword">return</span> <span class="token punctuation">(</span>n<span class="token operator">//</span><span class="token number">10</span><span class="token operator">**</span>b<span class="token punctuation">,</span> n<span class="token operator">%</span><span class="token number">10</span><span class="token operator">**</span>b<span class="token punctuation">)</span>
+</code></pre>
+<pre><code>6.
+</code></pre>
+<pre class=" language-py"><code class="prism  language-py">    <span class="token keyword">def</span> <span class="token function">karatsuba</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span> <span class="token punctuation">:</span>
+        t<span class="token operator">=</span><span class="token builtin">max</span><span class="token punctuation">(</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> t<span class="token operator">&lt;</span><span class="token number">2</span> <span class="token punctuation">:</span>
+            <span class="token keyword">return</span> m<span class="token operator">*</span>n
+        a<span class="token punctuation">,</span>b<span class="token operator">=</span>coupe_10n<span class="token punctuation">(</span>m<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+        c<span class="token punctuation">,</span>d<span class="token operator">=</span>coupe_10n<span class="token punctuation">(</span>n<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+        ac<span class="token operator">=</span>karatsuba<span class="token punctuation">(</span>a<span class="token punctuation">,</span>c<span class="token punctuation">)</span>
+        bd<span class="token operator">=</span>karatsuba<span class="token punctuation">(</span>b<span class="token punctuation">,</span>d<span class="token punctuation">)</span>
+        ab_cd<span class="token operator">=</span>karatsuba<span class="token punctuation">(</span>ac<span class="token punctuation">,</span>bd<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ac<span class="token operator">*</span><span class="token number">10</span><span class="token operator">**</span>t<span class="token operator">+</span><span class="token punctuation">(</span>ac<span class="token operator">+</span>bd<span class="token operator">-</span>ab_cd<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">10</span><span class="token operator">**</span><span class="token punctuation">(</span>t<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">+</span>bd
+</code></pre>
 <p><br><br></p>
 <p><br><br><br><br><br><br><br><br><br></p>
 <h1 id="aides-à-lécriture-de-ce-document-">Aides à l’écriture de ce document :</h1>
